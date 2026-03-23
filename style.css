@@ -10,5 +10,5 @@ nav ul {
 .btn-group {
     display: flex;
     gap: 10px;
-    flex-wrap: wrap; /* Garante que os botões quebrem linha se necessário */
+    flex-wrap: wrap; 
 }
