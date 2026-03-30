@@ -2,54 +2,68 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xhopii - Ver Produto</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Xhopii</div>
-        <nav>
-            <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="cadastro-cliente.php">Cadastro Cliente</a></li>
-                <li><a href="ver-produtos.php">Ver Produtos</a></li>
-            </ul>
+    <header class="main-header">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Xhopii Logo">
+            <span class="logo-text">Xhopii</span>
+        </div>
+        <nav class="nav-links">
+            <a href="home.php">Home</a>
+            <a href="cadastro-cliente.php">Cadastro Cliente</a>
+            <a href="cadastro-funcionario.php">Cadastro Funcionário</a>
+            <a href="cadastro-produto.php">Cadastro Produto</a>
+            <a href="ver-clientes.php">Ver Clientes</a>
+            <a href="ver-funcionarios.php">Ver Funcionários</a>
+            <a href="ver-produtos.php">Ver Produtos</a>
         </nav>
     </header>
 
-    <main class="product-container">
-        <aside class="product-gallery">
-            <img src="thumb1.jpg" alt="Camisa Cinza">
-            <img src="thumb2.jpg" alt="Camisa Azul">
-            </aside>
+    <main class="product-view">
+        <aside class="thumbnails">
+            <img src="img/produto1.png" alt="Miniatura Cinza">
+            <img src="img/produto2.png" alt="Miniatura Azul">
+            <img src="img/produto3.png" alt="Miniatura Verde">
+            <img src="img/produto4.png" alt="Miniatura Cinza Claro">
+            <img src="img/produto5.png" alt="Miniatura Rosa">
+        </aside>
 
-        <section class="product-image">
-            <img src="main-tshirt.jpg" alt="Camisa Principal">
+        <section class="main-image">
+            <img src="img/produto1.png" alt="Camisa Desenvolvedor Front-End CSS">
         </section>
 
-        <section class="product-details">
+        <section class="details">
             <h1>Camisa Desenvolvedor Front-End CSS</h1>
             <p class="price">R$56,90</p>
             <p class="stock">171 peças disponíveis</p>
 
-            <div class="options">
+            <div class="option-group">
                 <label>Modelos:</label>
-                <div class="btn-group">
+                <div class="buttons">
                     <button>Preto</button>
                     <button>Azul</button>
-                    </div>
+                    <button>Verde</button>
+                    <button>Cinza</button>
+                    <button>Rosa</button>
+                </div>
             </div>
 
-            <div class="options">
+            <div class="option-group">
                 <label>Tamanhos:</label>
-                <div class="btn-group">
+                <div class="buttons">
                     <button>P</button>
                     <button>M</button>
-                    </div>
+                    <button>G</button>
+                    <button>GG</button>
+                </div>
             </div>
 
-            <p>Tamanho Selecionado: <strong>P</strong></p>
-            <button class="buy-now">Comprar Agora</button>
+            <p class="selection-info">Tamanho Selecionado: P</p>
+            <button class="buy-button">Comprar Agora</button>
         </section>
     </main>
 </body>
