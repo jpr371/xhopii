@@ -1,278 +1,227 @@
-/* ===== 1. RESET E BASE ===== */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: 'Segoe UI', sans-serif; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-body { 
-    background-color: rgb(195, 195, 195); 
-    display: flex; 
-    flex-direction: column; 
-    min-height: 100vh; 
+body {
+    background-color: #fff;
 }
 
-/* Fundo Laranja exclusivo para Login, Cadastro e Redefinir */
-body.pagina-login main { 
-    background-color: #EE4D2D !important; 
-}
-
-/* ===== 2. HEADER E LOGO ===== */
-header { 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    padding: 0 40px; 
-}
-
-header.header-branco { 
-    background-color: #ffffff; 
-    height: 80px; 
-    border-bottom: 1px solid #e0e0e0; 
-}
-
-header.header-laranja { 
-    background-color: #EE4D2D; 
-    height: 56px; 
-    color: white; 
-}
-
-.header-esquerda { 
-    display: flex; 
-    align-items: center; 
-    gap: 12px; 
+/* Header conforme a imagem */
+.main-header {
+    background-color: #ee4d2d; /* Laranja Xhopii */
+    padding: 10px 5%;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    text-decoration: none;
     gap: 10px;
+    margin-bottom: 10px;
 }
 
-.logo-container img { 
-    height: 42px; 
-    width: auto; 
-    display: block; 
+.logo-container img {
+    width: 35px;
 }
 
-/* Texto XHOPII em Laranja para o Header Branco */
-.logo-texto-laranja {
-    color: #EE4D2D;
+.logo-text {
+    color: white;
     font-size: 28px;
     font-weight: bold;
-    letter-spacing: -1px;
 }
 
-/* Texto XHOPII em Branco para o Header Laranja (Home/Internas) */
-header.header-laranja .logo-texto-laranja {
-    color: white;
-}
-
-.header-titulo { 
-    font-size: 18px; 
-    padding-left: 14px; 
-    border-left: 1px solid #ccc; 
-    color: #555; 
-}
-
-header.header-laranja .header-titulo { 
-    color: white; 
-    border-left: 1px solid rgba(255,255,255,0.3); 
-}
-
-/* ===== 3. NAVEGAÇÃO ===== */
-nav { 
-    background: #EE4D2D; 
-    padding: 0 40px; 
-}
-
-nav ul { 
-    list-style: none; 
-    display: flex; 
-    gap: 10px; 
-}
-
-nav ul li a { 
-    display: block; 
-    padding: 12px 15px; 
-    font-size: 13px; 
-    color: white; 
-    text-decoration: none; 
-    opacity: 0.9; 
-}
-
-nav ul li a:hover, nav ul li a.ativo { 
-    opacity: 1; 
-    font-weight: 600; 
-    background: rgba(0,0,0,0.1); 
-}
-
-/* ===== 4. CARDS E FORMULÁRIOS ===== */
-main { 
-    flex: 1; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    padding: 40px 20px; 
-}
-
-.card { 
-    background: white; 
-    border-radius: 4px; 
-    padding: 35px; 
-    width: 100%; 
-    max-width: 420px; 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-}
-
-.card h2 { 
-    margin-bottom: 20px; 
-    font-size: 20px; 
-    color: #333; 
-    text-align: left;
-}
-
-form input { 
-    width: 100%; 
-    padding: 12px; 
-    border: 1px solid #ddd; 
-    border-radius: 2px; 
-    outline: none; 
-    margin-bottom: 12px;
-}
-
-.btn-principal { 
-    width: 100%; 
-    padding: 12px; 
-    background: #EE4D2D; 
-    color: white; 
-    border: none; 
-    border-radius: 2px; 
-    font-weight: 600; 
-    cursor: pointer; 
-    text-transform: uppercase; 
-    margin-top: 10px;
-}
-
-/* ===== 5. SEÇÃO SOCIAL E DIVISOR ===== */
-.divisor { 
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
-    margin: 20px 0; 
-    color: #999; 
-    font-size: 11px; 
-}
-
-.divisor::before, .divisor::after { 
-    content: ''; 
-    flex: 1; 
-    height: 1px; 
-    background: #eee; 
-}
-
-.social-group { 
-    display: flex; 
-    gap: 8px; 
-    justify-content: center; 
-}
-
-.btn-social { 
-    flex: 1; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 6px; 
-    padding: 10px; 
-    border: 1px solid #ddd; 
-    background: white; 
-    cursor: pointer; 
-    font-size: 12px; 
-    border-radius: 2px; 
-}
-
-.btn-social img { height: 18px; width: auto; }
-
-/* ===== 6. FOOTER COMPLETO ===== */
-.footer-completo {
-    background-color: #fbfbfb;
-    border-top: 1px solid #e0e0e0;
-    padding: 40px 0 20px 0;
-    margin-top: 50px;
-    width: 100%;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+.nav-links {
+    display: flex;
+    justify-content: center;
     gap: 20px;
+    background-color: #f5f5f5;
+    padding: 12px;
+    margin: 0 -5.3%; /* Alinha com as bordas da tela */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ee4d2d; /* Links em laranja conforme a imagem */
+    font-size: 14px;
+}
+
+/* Container Principal com FlexBox */
+.product-view {
+    display: flex;
+    max-width: 1100px;
+    margin: 50px auto;
+    gap: 40px;
     padding: 0 20px;
 }
 
-.footer-col h4 {
-    font-size: 12px;
-    color: #333;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.footer-col ul li {
-    font-size: 12px;
-    color: #757575;
-    margin-bottom: 8px;
-    list-style: none;
-}
-
-.pay-grid {
+/* Coluna de Miniaturas */
+.thumbnails {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    max-width: 180px;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.pay-grid img {
-    height: 20px;
-    width: auto;
+.thumbnails img {
+    width: 70px;
+    opacity: 0.6;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.thumbnails img:hover {
+    opacity: 1;
+    border-color: #ee4d2d;
+}
+
+/* Imagem de Destaque */
+.main-image img {
+    width: 400px;
+}
+
+/* Detalhes do Produto */
+.details {
+    flex: 1;
+}
+
+.details h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.details .price {
+    font-size: 28px;
+    color: #ee4d2d;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.details .stock {
+    font-size: 14px;
+    color: #757575;
+    margin-bottom: 20px;
+}
+
+.option-group {
+    margin-bottom: 20px;
+}
+
+.option-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Botões de Opção com borda cinza clara */
+.buttons button {
     background: white;
-    padding: 2px;
-    border: 1px solid #eee;
+    border: 1px solid #e8e8e8;
+    padding: 8px 15px;
+    min-width: 50px;
+    cursor: pointer;
+    color: #555;
+    font-size: 13px;
+}
+
+.buttons button:hover {
+    border-color: #ee4d2d;
+    color: #ee4d2d;
+}
+
+.selection-info {
+    font-size: 14px;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Botão Comprar Agora identico à imagem */
+.buy-button {
+    background-color: #ee4d2d;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
     border-radius: 2px;
 }
 
-.social-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-    font-size: 12px;
-    color: #757575;
+.buy-button:hover {
+    background-color: #d73211;
+}
+ /* Reset e Base */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+body { background-color: #f5f5f5; color: #333; }
+
+/* Header e Navegação (FlexBox) */
+.main-header { background-color: #ee4d2d; color: white; }
+.header-top { display: flex; justify-content: space-between; padding: 15px 5%; align-items: center; }
+.logo-area { display: flex; align-items: center; gap: 10px; font-size: 24px; font-weight: bold; }
+.logo-area img { width: 35px; }
+.exit-link { color: white; text-decoration: none; font-size: 14px; }
+
+.nav-bar { display: flex; justify-content: center; gap: 15px; background-color: #ff7355; padding: 10px; }
+.nav-bar a { color: white; text-decoration: none; font-size: 13px; }
+.nav-bar a.active { font-weight: bold; text-decoration: underline; }
+
+/* Layout da Listagem (Grid Layout - Obrigatório) */
+.container { max-width: 1200px; margin: 30px auto; padding: 0 20px; text-align: center; }
+.section-title { color: #ee4d2d; margin-bottom: 25px; font-size: 18px; font-weight: normal; }
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas conforme a imagem */
+    gap: 20px;
 }
 
-.social-item img { height: 18px; width: auto; }
-
-.qr-img {
+/* Card do Produto (FlexBox para organizar conteúdo verticalmente) */
+.product-card {
     background: white;
-    padding: 5px;
-    border: 1px solid #ddd;
-    width: 90px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: transform 0.2s;
 }
 
-.app-links img {
-    display: block;
-    height: 20px;
-    margin: 5px 0;
+.product-card:hover { border-color: #ee4d2d; }
+.product-card img { width: 100%; height: auto; border-bottom: 1px solid #f0f0f0; }
+
+.product-info { padding: 12px; display: flex; flex-direction: column; flex-grow: 1; }
+.product-info h3 { font-size: 13px; margin-bottom: 10px; height: 35px; overflow: hidden; }
+.product-info p { font-size: 11px; color: #666; margin-bottom: 5px; }
+
+.product-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
 }
 
-.copyright-barra {
-    text-align: center;
-    border-top: 1px solid #eee;
-    margin-top: 30px;
-    padding-top: 20px;
-    font-size: 12px;
-    color: #999;
+.price { color: #ee4d2d; font-weight: bold; font-size: 14px; }
+.stock { color: #999; font-size: 10px; }
+
+/* Footer (Grid Layout) */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 40px 5%;
+    background-color: #fbfbfb;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
+    gap: 20px;
 }
+
+.footer-grid h3 { font-size: 12px; margin-bottom: 15px; color: #555; }
+.footer-grid ul { list-style: none; }
+.footer-grid li { font-size: 11px; color: #888; margin-bottom: 8px; cursor: pointer; }
+.copyright { text-align: center; padding: 20px; font-size: 11px; color: #999; background: #fbfbfb; }
