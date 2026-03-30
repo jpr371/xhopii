@@ -13,7 +13,7 @@
                 <img src="img/logo.png" alt="Xhopii Logo">
                 <span>Xhopii</span>
             </div>
-            <a href="login.php" class="exit-link">Sair</a>
+            <a href="index.html" class="exit-link">Sair</a>
         </div>
         <nav class="nav-bar">
             <a href="home.php">Home</a>
