@@ -1,14 +1,159 @@
-
-nav ul {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    background-color: #ef6c33;
-    padding: 10px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-.btn-group {
+body {
+    background-color: #fff;
+}
+
+/* Header conforme a imagem */
+.main-header {
+    background-color: #ee4d2d; /* Laranja Xhopii */
+    padding: 10px 5%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.logo-container img {
+    width: 35px;
+}
+
+.logo-text {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #f5f5f5;
+    padding: 12px;
+    margin: 0 -5.3%; /* Alinha com as bordas da tela */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ee4d2d; /* Links em laranja conforme a imagem */
+    font-size: 14px;
+}
+
+/* Container Principal com FlexBox */
+.product-view {
+    display: flex;
+    max-width: 1100px;
+    margin: 50px auto;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Coluna de Miniaturas */
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.thumbnails img {
+    width: 70px;
+    opacity: 0.6;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.thumbnails img:hover {
+    opacity: 1;
+    border-color: #ee4d2d;
+}
+
+/* Imagem de Destaque */
+.main-image img {
+    width: 400px;
+}
+
+/* Detalhes do Produto */
+.details {
+    flex: 1;
+}
+
+.details h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.details .price {
+    font-size: 28px;
+    color: #ee4d2d;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.details .stock {
+    font-size: 14px;
+    color: #757575;
+    margin-bottom: 20px;
+}
+
+.option-group {
+    margin-bottom: 20px;
+}
+
+.option-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.buttons {
     display: flex;
     gap: 10px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+}
+
+/* Botões de Opção com borda cinza clara */
+.buttons button {
+    background: white;
+    border: 1px solid #e8e8e8;
+    padding: 8px 15px;
+    min-width: 50px;
+    cursor: pointer;
+    color: #555;
+    font-size: 13px;
+}
+
+.buttons button:hover {
+    border-color: #ee4d2d;
+    color: #ee4d2d;
+}
+
+.selection-info {
+    font-size: 14px;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Botão Comprar Agora identico à imagem */
+.buy-button {
+    background-color: #ee4d2d;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.buy-button:hover {
+    background-color: #d73211;
 }
