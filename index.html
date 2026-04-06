@@ -4,36 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xhopii - Ver Produto</title>
-    <!-- Chamada para o arquivo CSS externo para manter o layout -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Cabeçalho (Tag Semântica conforme Slide 137) -->
     <header class="main-header">
-        <div class="logo-container">
-            <!-- Atributos src e alt conforme Slide 149 -->
-            <img src="img/logo.png" alt="Xhopii Logo">
-            <span class="logo-text">Xhopii</span>
-        </div>
-        
-        <!-- Navegação (Tag Semântica conforme Slide 137) -->
-        <nav class="nav-links">
-            <!-- Hyperlinks conforme Slide 144 -->
-            <a href="home.php">Home</a>
-            <a href="cadastro-cliente.php">Cadastro Cliente</a>
-            <a href="cadastro-funcionario.php">Cadastro Funcionário</a>
-            <a href="cadastro-produto.php">Cadastro Produto</a>
-            <a href="ver-clientes.php">Ver Clientes</a>
-            <a href="ver-funcionarios.php">Ver Funcionários</a>
-            <a href="ver-produtos.php">Ver Produtos</a>
+        <section class="header-top">
+            <section class="logo-area">
+                <img src="img/logo.png" alt="Xhopii Logo">
+                <span class="logo-text">Xhopii</span>
+            </section>
+            <a href="login.html" class="exit-link">Sair</a>
+        </section>
+        <nav class="nav-bar">
+            <a href="home.html">Home</a>
+            <a href="cad_cliente.html">Cadastro Cliente</a>
+            <a href="cad_funcionario.html">Cadastro Funcionário</a>
+            <a href="cad_produto.html">Cadastro Produto</a>
+            <a href="cad_loja.html">Cadastro Loja</a>
+            <a href="cad_cupons.html">Cadastro Cupom</a>
+            <a href="ver_clientes.html">Ver Clientes</a>
+            <a href="ver_funcionarios.html">Ver Funcionários</a>
+            <a href="ver_produtos.html">Ver Produtos</a>
+            <a href="ver_lojas.html">Ver Lojas</a>
+            <a href="ver_cupons.html">Ver Cupons</a>
         </nav>
     </header>
 
-    <!-- Conteúdo Principal (Tag Semântica conforme Slide 137) -->
     <main class="product-view">
-        
-        <!-- Barra Lateral de Miniaturas (Tag Semântica conforme Slide 137) -->
+
         <aside class="thumbnails">
             <img src="img/produto1.png" alt="Miniatura Cinza">
             <img src="img/produto2.png" alt="Miniatura Azul">
@@ -42,64 +41,44 @@
             <img src="img/produto5.png" alt="Miniatura Rosa">
         </aside>
 
-        <!-- Seção da Imagem Principal (Tag Semântica conforme Slide 137) -->
         <section class="main-image">
             <img src="img/produto1.png" alt="Camisa Desenvolvedor Front-End CSS">
         </section>
 
-        <!-- Detalhes do Produto -->
         <section class="details">
-            <!-- Título de nível 1 conforme Slide 141 -->
             <h1>Camisa Desenvolvedor Front-End CSS</h1>
-            
-            <p class="price">
-                <!-- Uso de b (negrito) conforme Slide 143 -->
-                <b>R$56,90</b>
-            </p>
-            
-            <p class="stock">
-                <!-- Uso de small conforme Slide 143 -->
-                <small>171 peças disponíveis</small>
-            </p>
 
-            <div class="option-group">
-                <p>
-                    <!-- Uso de u (sublinhado) conforme Slide 143 -->
-                    <u>Modelos:</u><br>
-                    <div class="buttons">
-                        <button type="button">Preto</button>
-                        <button type="button">Azul</button>
-                        <button type="button">Verde</button>
-                        <button type="button">Cinza</button>
-                        <button type="button">Rosa</button>
-                    </div>
-                </p>
-            </div>
+            <p class="price"><b>R$56,90</b></p>
 
-            <div class="option-group">
-                <p>
-                    <u>Tamanhos:</u><br>
-                    <div class="buttons">
-                        <button type="button">P</button>
-                        <button type="button">M</button>
-                        <button type="button">G</button>
-                        <button type="button">GG</button>
-                    </div>
-                </p>
-            </div>
+            <p class="stock"><small>171 peças disponíveis</small></p>
 
-            <p class="selection-info">
-                Tamanho Selecionado: 
-                <!-- Uso de strong (importância) conforme Slide 143 -->
-                <strong>P</strong>
-            </p>
+            <section class="option-group">
+                <p><u>Modelos:</u></p>
+                <section class="buttons">
+                    <button type="button">Preto</button>
+                    <button type="button">Azul</button>
+                    <button type="button">Verde</button>
+                    <button type="button">Cinza</button>
+                    <button type="button">Rosa</button>
+                </section>
+            </section>
 
-            <!-- Botão conforme Slide 184 -->
+            <section class="option-group">
+                <p><u>Tamanhos:</u></p>
+                <section class="buttons">
+                    <button type="button">P</button>
+                    <button type="button">M</button>
+                    <button type="button">G</button>
+                    <button type="button">GG</button>
+                </section>
+            </section>
+
+            <p class="selection-info">Tamanho Selecionado: <strong>P</strong></p>
+
             <button type="submit" class="buy-button">Comprar Agora</button>
         </section>
-    </main>
 
-    
+    </main>
 
 </body>
 </html>

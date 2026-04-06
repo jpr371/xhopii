@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xhopii - Visualizar Produtos</title>
+    <title>Xhopii - Cadastrar Loja</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,158 +11,43 @@
     <header class="main-header">
         <section class="header-top">
             <section class="logo-area">
-                <img src="img/logo.png" alt="Xhopii Logo">
-                <span class="logo-text">Xhopii</span>
+                <img src="img/logo.png" alt="Xhopii">
+                <span>Xhopii</span>
             </section>
             <a href="login.html" class="exit-link">Sair</a>
         </section>
-        <nav class="nav-bar">
-            <a href="home.php">Home</a>
+                <nav class="nav-bar">
+            <a href="home.html">Home</a>
             <a href="cad_cliente.html">Cadastro Cliente</a>
             <a href="cad_funcionario.html">Cadastro Funcionário</a>
-            <a href="cadastro-produto.php">Cadastro Produto</a>
-            <a href="ver-clientes.php">Ver Clientes</a>
-            <a href="ver-funcionarios.php">Ver Funcionários</a>
-            <a href="ver-produtos.php" class="active">Ver Produtos</a>
-            <a href="ver-lojas.php">Ver Lojas</a>
+            <a href="cad_produto.html">Cadastro Produto</a>
+            <a href="cad_loja.html" class="active">Cadastro Loja</a>
+            <a href="cad_cupons.html">Cadastro Cupom</a>
+            <a href="ver_clientes.html">Ver Clientes</a>
+            <a href="ver_funcionarios.html">Ver Funcionários</a>
+            <a href="ver_produtos.html">Ver Produtos</a>
+            <a href="ver_lojas.html">Ver Lojas</a>
+            <a href="ver_cupons.html">Ver Cupons</a>
         </nav>
     </header>
 
-    <main class="container">
-        <h2 class="section-title">PRODUTOS</h2>
-
-        <section class="products-grid">
-
-            <article class="product-card">
-                <img src="img/produto1.png" alt="Camisa Desenvolvedor">
-                <section class="product-info">
-                    <h3>Camisa Desenvolvedor Front-End CSS</h3>
-                    <p><strong>Fabricante:</strong> Eletiva Uniformes</p>
-                    <p><strong>Descrição:</strong> Uma Camisa ideal para programar por mais de 12 horas</p>
-                    <section class="product-footer">
-                        <span class="price">R$ 59,90</span>
-                        <span class="stock">171 disponíveis</span>
-                    </section>
+    <main class="form-page">
+        <section class="form-container">
+            <h1 style="color:#ee4d2d; text-align:center; margin-bottom:20px;">Cadastrar Loja</h1>
+            <form action="#">
+                <section class="input-group"><input type="text" name="nome" placeholder="Nome da Loja" required></section>
+                <section class="input-group"><input type="text" name="cnpj" placeholder="CNPJ" required></section>
+                <section class="input-group"><input type="text" name="categoria" placeholder="Categoria" required></section>
+                <section class="input-group"><input type="text" name="endereco" placeholder="Endereço" required></section>
+                <section class="input-group"><input type="tel" name="telefone" placeholder="Telefone"></section>
+                <section class="input-group"><input type="email" name="email" placeholder="Email" required></section>
+                <section class="input-group"><textarea name="descricao" placeholder="Descrição da Loja" rows="3"></textarea></section>
+                <section class="input-group">
+                    <label style="font-size:12px; color:#666;">Logo da Loja:</label>
+                    <input type="file" name="logo_loja" style="font-size:12px; margin-top:5px;">
                 </section>
-            </article>
-
-            <article class="product-card">
-                <img src="img/produto2.png" alt="Camisa Desenvolvedor">
-                <section class="product-info">
-                    <h3>Camisa Desenvolvedor Front-End CSS</h3>
-                    <p><strong>Fabricante:</strong> Eletiva Uniformes</p>
-                    <p><strong>Descrição:</strong> Uma Camisa ideal para programar por mais de 12 horas</p>
-                    <section class="product-footer">
-                        <span class="price">R$ 59,90</span>
-                        <span class="stock">171 disponíveis</span>
-                    </section>
-                </section>
-            </article>
-
-            <article class="product-card">
-                <img src="img/produto3.png" alt="Camisa Desenvolvedor">
-                <section class="product-info">
-                    <h3>Camisa Desenvolvedor Front-End CSS</h3>
-                    <p><strong>Fabricante:</strong> Eletiva Uniformes</p>
-                    <p><strong>Descrição:</strong> Uma Camisa ideal para programar por mais de 12 horas</p>
-                    <section class="product-footer">
-                        <span class="price">R$ 59,90</span>
-                        <span class="stock">171 disponíveis</span>
-                    </section>
-                </section>
-            </article>
-
-            <article class="product-card">
-                <img src="img/produto4.png" alt="Camisa Desenvolvedor">
-                <section class="product-info">
-                    <h3>Camisa Desenvolvedor Front-End CSS</h3>
-                    <p><strong>Fabricante:</strong> Eletiva Uniformes</p>
-                    <p><strong>Descrição:</strong> Uma Camisa ideal para programar por mais de 12 horas</p>
-                    <section class="product-footer">
-                        <span class="price">R$ 59,90</span>
-                        <span class="stock">171 disponíveis</span>
-                    </section>
-                </section>
-            </article>
-
-            <article class="product-card">
-                <img src="img/produto5.png" alt="Camisa Desenvolvedor">
-                <section class="product-info">
-                    <h3>Camisa Desenvolvedor Front-End CSS</h3>
-                    <p><strong>Fabricante:</strong> Eletiva Uniformes</p>
-                    <p><strong>Descrição:</strong> Uma Camisa ideal para programar por mais de 12 horas</p>
-                    <section class="product-footer">
-                        <span class="price">R$ 59,90</span>
-                        <span class="stock">171 disponíveis</span>
-                    </section>
-                </section>
-            </article>
-
-            <article class="product-card">
-                <img src="img/produto1.png" alt="Camisa">
-                <section class="product-info">
-                    <h3>Camisa Desenvolvedor Front-End CSS</h3>
-                    <p><strong>Fabricante:</strong> Eletiva Uniformes</p>
-                    <p><strong>Descrição:</strong> Uma Camisa ideal para programar por mais de 12 horas</p>
-                    <section class="product-footer">
-                        <span class="price">R$ 59,90</span>
-                        <span class="stock">171 disponíveis</span>
-                    </section>
-                </section>
-            </article>
-
-            <article class="product-card">
-                <img src="img/produto2.png" alt="Camisa">
-                <section class="product-info">
-                    <h3>Camisa Desenvolvedor Front-End CSS</h3>
-                    <p><strong>Fabricante:</strong> Eletiva Uniformes</p>
-                    <p><strong>Descrição:</strong> Uma Camisa ideal para programar por mais de 12 horas</p>
-                    <section class="product-footer">
-                        <span class="price">R$ 59,90</span>
-                        <span class="stock">171 disponíveis</span>
-                    </section>
-                </section>
-            </article>
-
-            <article class="product-card">
-                <img src="img/produto3.png" alt="Camisa">
-                <section class="product-info">
-                    <h3>Camisa Desenvolvedor Front-End CSS</h3>
-                    <p><strong>Fabricante:</strong> Eletiva Uniformes</p>
-                    <p><strong>Descrição:</strong> Uma Camisa ideal para programar por mais de 12 horas</p>
-                    <section class="product-footer">
-                        <span class="price">R$ 59,90</span>
-                        <span class="stock">171 disponíveis</span>
-                    </section>
-                </section>
-            </article>
-
-            <article class="product-card" style="border-color: #ee4d2d;">
-                <img src="img/produto4.png" alt="Camisa">
-                <section class="product-info">
-                    <h3>Camisa Desenvolvedor Front-End CSS</h3>
-                    <p><strong>Fabricante:</strong> Eletiva Uniformes</p>
-                    <p><strong>Descrição:</strong> Uma Camisa ideal para programar por mais de 12 horas</p>
-                    <section class="product-footer">
-                        <span class="price">R$ 59,90</span>
-                        <span class="stock">171 disponíveis</span>
-                    </section>
-                </section>
-            </article>
-
-            <article class="product-card">
-                <img src="img/produto5.png" alt="Camisa">
-                <section class="product-info">
-                    <h3>Camisa Desenvolvedor Front-End CSS</h3>
-                    <p><strong>Fabricante:</strong> Eletiva Uniformes</p>
-                    <p><strong>Descrição:</strong> Uma Camisa ideal para programar por mais de 12 horas</p>
-                    <section class="product-footer">
-                        <span class="price">R$ 59,90</span>
-                        <span class="stock">171 disponíveis</span>
-                    </section>
-                </section>
-            </article>
-
+                <button type="submit" class="btn-submit">CADASTRAR</button>
+            </form>
         </section>
     </main>
 
