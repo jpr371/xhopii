@@ -1,10 +1,23 @@
+<?php
+
+require_once("../controller/Controlador.php");
+
+$controlador = new Controlador();
+
+$lojas = $controlador->visualizarLojas();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xhopii - Cadastro Cliente</title>
-    <link rel="stylesheet" href="../css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Xhopii - Lojas</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
 </head>
 <body>
 
@@ -14,15 +27,16 @@
             <img src="../img/logo.png" alt="Xhopii Logo">
             <span>Xhopii</span>
         </section>
- <a href="../Processamento/Processamento.php?tipo=logout"
+
+        <a href="../Processamento/Processamento.php?tipo=logout"
    class="exit-link">
    Sair
-</a>       
+</a>
     </section>
 
     <nav class="nav-bar">
         <a href="home.php">Home</a>
-        <a href="cad_cliente.php" class="active">Cadastro Cliente</a>
+        <a href="cad_cliente.php">Cadastro Cliente</a>
         <a href="cad_funcionario.php">Cadastro Funcionário</a>
         <a href="cad_produto.php">Cadastro Produto</a>
         <a href="cad_loja.php">Cadastro Loja</a>
@@ -30,37 +44,62 @@
         <a href="ver_clientes.php">Ver Clientes</a>
         <a href="ver_funcionarios.php">Ver Funcionários</a>
         <a href="ver_produtos.php">Ver Produtos</a>
-        <a href="ver_lojas.php">Ver Lojas</a>
+        <a href="ver_lojas.php" class="active">Ver Lojas</a>
         <a href="ver_cupons.php">Ver Cupons</a>
     </nav>
 </header>
 
-<main class="cadastro-main">
-    <section class="card-cadastro">
-        <h2>Cadastrar Cliente</h2>
+<main class="lojas-container">
 
-        <form method="POST" action="../Processamento/Processamento.php">
-            <input type="hidden" name="tipo" value="cliente">
+<table class="lojas-tabela">
 
-            <input type="text" name="nome" placeholder="Nome completo" required>
-            <input type="text" name="cpf" placeholder="CPF" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="senha" placeholder="Senha" required>
-            <input type="text" name="telefone" placeholder="Telefone" required>
-          <input type="date"name="data_nascimento"class="campo-data"required>
+<tr>
+    <th>Logo</th>
+    <th>Nome</th>
+    <th>CNPJ</th>
+    <th>Categoria</th>
+    <th>Endereço</th>
+    <th>Telefone</th>
+    <th>Email</th>
+    <th>Descrição</th>
+</tr>
 
-            <button type="submit" class="btn-principal">CADASTRAR</button>
-            <p class="login-link">
-    Já tem cadastro?
-    <a href="login.php">Fazer login</a>
-</p>
-        </form>
-    </section>
+<?php while($loja = mysqli_fetch_assoc($lojas)){ ?>
+
+<tr>
+
+<td>
+    <img
+        src="<?php echo $loja["logo_loja"]; ?>"
+        class="logo-loja"
+        alt="Logo">
+</td>
+
+<td><?php echo $loja["nome"]; ?></td>
+<td><?php
+
+$cnpj = preg_replace('/\D/', '', $loja["cnpj"]);
+
+echo substr($cnpj,0,2) . '.***.***/****-' . substr($cnpj,-2);
+
+?></td>
+<td><?php echo $loja["categoria"]; ?></td>
+<td><?php echo $loja["endereco"]; ?></td>
+<td><?php echo $loja["telefone"]; ?></td>
+<td><?php echo $loja["email"]; ?></td>
+<td><?php echo $loja["descricao"]; ?></td>
+
+</tr>
+
+<?php } ?>
+
+</table>
+
 </main>
-
 
 <footer class="main-footer">
     <section class="footer-grid">
+
         <section>
             <h3>ATENDIMENTO AO CLIENTE</h3>
             <ul>
@@ -100,7 +139,7 @@
             </section>
         </section>
 
-        <section class="redes-sociais">
+       <section class="redes-sociais">
 
     <a href="#">
         <img src="../img/instagram.jpg" alt="Instagram">
@@ -126,12 +165,15 @@
 
         <section>
             <h3>ATENDIMENTO AO CLIENTE</h3>
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Xhopii" width="80" alt="QR Code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Xhopii" width="80">
             <p class="app-text">Disponível na Google Play e App Store</p>
         </section>
+
     </section>
 
-    <p class="copyright">© 2026 Xhopii. Todos os direitos acadêmicos reservados</p>
+    <p class="copyright">
+        © 2026 Xhopii. Todos os direitos acadêmicos reservados
+    </p>
 </footer>
 
 </body>

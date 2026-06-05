@@ -1,9 +1,18 @@
+<?php
+require_once("../controller/Controlador.php");
+
+$controlador = new Controlador();
+$produtos = $controlador->visualizarProdutos();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xhopii - Cadastro Cliente</title>
+    <title>Xhopii - Home</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -14,15 +23,15 @@
             <img src="../img/logo.png" alt="Xhopii Logo">
             <span>Xhopii</span>
         </section>
- <a href="../Processamento/Processamento.php?tipo=logout"
+      <a href="../Processamento/Processamento.php?tipo=logout"
    class="exit-link">
    Sair
-</a>       
+</a>
     </section>
 
     <nav class="nav-bar">
-        <a href="home.php">Home</a>
-        <a href="cad_cliente.php" class="active">Cadastro Cliente</a>
+        <a href="home.php" class="active">Home</a>
+        <a href="cad_cliente.php">Cadastro Cliente</a>
         <a href="cad_funcionario.php">Cadastro Funcionário</a>
         <a href="cad_produto.php">Cadastro Produto</a>
         <a href="cad_loja.php">Cadastro Loja</a>
@@ -35,29 +44,80 @@
     </nav>
 </header>
 
-<main class="cadastro-main">
-    <section class="card-cadastro">
-        <h2>Cadastrar Cliente</h2>
+<main class="home-container">
 
-        <form method="POST" action="../Processamento/Processamento.php">
-            <input type="hidden" name="tipo" value="cliente">
+    <section id="carrossel" class="carousel slide" data-bs-ride="carousel">
+        <section class="carousel-inner">
+            <article class="carousel-item active">
+                <img src="../img/logo2.png" alt="Xhopii">
+            </article>
+            <article class="carousel-item">
+                <img src="../img/logo3.png" alt="Promoção">
+            </article>
+        </section>
 
-            <input type="text" name="nome" placeholder="Nome completo" required>
-            <input type="text" name="cpf" placeholder="CPF" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="senha" placeholder="Senha" required>
-            <input type="text" name="telefone" placeholder="Telefone" required>
-          <input type="date"name="data_nascimento"class="campo-data"required>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrossel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
 
-            <button type="submit" class="btn-principal">CADASTRAR</button>
-            <p class="login-link">
-    Já tem cadastro?
-    <a href="login.php">Fazer login</a>
-</p>
-        </form>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrossel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
     </section>
-</main>
 
+    <section class="promo-banner">
+        <img src="../img/logo3.png" alt="Exclusivo na 1ª compra">
+    </section>
+
+    <p class="descobertas-title">DESCOBERTAS DO DIA</p>
+
+    <section class="products-grid">
+
+        <?php while($produto = mysqli_fetch_assoc($produtos)){ ?>
+
+            <?php
+                $imagemProduto = "../img/produto1.png";
+
+                if(isset($produto["foto_produto"]) && !empty($produto["foto_produto"])){
+                    $imagemProduto = $produto["foto_produto"];
+                }
+            ?>
+
+            <article class="product-card">
+                <a href="#">
+                    <img src="<?php echo $imagemProduto; ?>" alt="<?php echo $produto["nome"]; ?>">
+                </a>
+
+                <section class="product-info">
+                    <h3><?php echo $produto["nome"]; ?></h3>
+
+                    <p>
+                        <strong>Fabricante:</strong>
+                        <?php echo $produto["fabricante"]; ?>
+                    </p>
+
+                    <p>
+                        <strong>Descrição:</strong>
+                        <?php echo $produto["descricao"]; ?>
+                    </p>
+
+                    <section class="product-footer">
+                        <span class="price">
+                            R$ <?php echo number_format($produto["valor"], 2, ",", "."); ?>
+                        </span>
+
+                        <span class="stock">
+                            <?php echo $produto["quantidade"]; ?> disponíveis
+                        </span>
+                    </section>
+                </section>
+            </article>
+
+        <?php } ?>
+
+    </section>
+
+</main>
 
 <footer class="main-footer">
     <section class="footer-grid">
@@ -131,8 +191,12 @@
         </section>
     </section>
 
-    <p class="copyright">© 2026 Xhopii. Todos os direitos acadêmicos reservados</p>
+    <p class="copyright">
+        © 2026 Xhopii. Todos os direitos acadêmicos reservados
+    </p>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

@@ -1,9 +1,15 @@
+<?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xhopii - Cadastro Cliente</title>
+    <title>Xhopii - Cadastro Cupom</title>
+
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -14,19 +20,20 @@
             <img src="../img/logo.png" alt="Xhopii Logo">
             <span>Xhopii</span>
         </section>
- <a href="../Processamento/Processamento.php?tipo=logout"
+
+    <a href="../Processamento/Processamento.php?tipo=logout"
    class="exit-link">
    Sair
-</a>       
+</a>
     </section>
 
     <nav class="nav-bar">
         <a href="home.php">Home</a>
-        <a href="cad_cliente.php" class="active">Cadastro Cliente</a>
+        <a href="cad_cliente.php">Cadastro Cliente</a>
         <a href="cad_funcionario.php">Cadastro Funcionário</a>
         <a href="cad_produto.php">Cadastro Produto</a>
         <a href="cad_loja.php">Cadastro Loja</a>
-        <a href="cad_cupom.php">Cadastro Cupom</a>
+        <a href="cad_cupom.php" class="active">Cadastro Cupom</a>
         <a href="ver_clientes.php">Ver Clientes</a>
         <a href="ver_funcionarios.php">Ver Funcionários</a>
         <a href="ver_produtos.php">Ver Produtos</a>
@@ -36,31 +43,56 @@
 </header>
 
 <main class="cadastro-main">
+
     <section class="card-cadastro">
-        <h2>Cadastrar Cliente</h2>
+
+        <h2>Cadastrar Cupom</h2>
 
         <form method="POST" action="../Processamento/Processamento.php">
-            <input type="hidden" name="tipo" value="cliente">
 
-            <input type="text" name="nome" placeholder="Nome completo" required>
-            <input type="text" name="cpf" placeholder="CPF" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="senha" placeholder="Senha" required>
-            <input type="text" name="telefone" placeholder="Telefone" required>
-          <input type="date"name="data_nascimento"class="campo-data"required>
+            <input type="hidden" name="tipo" value="cupom">
 
-            <button type="submit" class="btn-principal">CADASTRAR</button>
-            <p class="login-link">
-    Já tem cadastro?
-    <a href="login.php">Fazer login</a>
-</p>
+            <input
+                type="text"
+                name="codigo"
+                placeholder="Código do Cupom"
+                required>
+
+            <input
+                type="text"
+                name="desconto"
+                placeholder="Desconto"
+                required>
+
+            <select name="tipo_desconto" required class="campo-select">
+                <option value="">Tipo de desconto</option>
+                <option value="percentual">Percentual</option>
+                <option value="fixo">Fixo</option>
+                <option value="frete">Frete</option>
+            </select>
+
+            <input type="date"name="validade"class="campo-data"required>
+            <input type="number"name="quantidade_usos"value="0"placeholder="Quantidade de usos"required>
+
+            <input type="number"step="0.01"name="valor_minimo_pedido"value="0.00"placeholder="Valor mínimo do pedido">
+
+            <text areaname="descricao"placeholder="Descrição do cupom"></textarea>
+
+            <button
+                type="submit"
+                class="btn-principal">
+                CADASTRAR
+            </button>
+
         </form>
-    </section>
-</main>
 
+    </section>
+
+</main>
 
 <footer class="main-footer">
     <section class="footer-grid">
+
         <section>
             <h3>ATENDIMENTO AO CLIENTE</h3>
             <ul>
@@ -100,7 +132,7 @@
             </section>
         </section>
 
-        <section class="redes-sociais">
+         <section class="redes-sociais">
 
     <a href="#">
         <img src="../img/instagram.jpg" alt="Instagram">
@@ -129,9 +161,12 @@
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Xhopii" width="80" alt="QR Code">
             <p class="app-text">Disponível na Google Play e App Store</p>
         </section>
+
     </section>
 
-    <p class="copyright">© 2026 Xhopii. Todos os direitos acadêmicos reservados</p>
+    <p class="copyright">
+        © 2026 Xhopii. Todos os direitos acadêmicos reservados
+    </p>
 </footer>
 
 </body>

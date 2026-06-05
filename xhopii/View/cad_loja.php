@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xhopii - Cadastro Cliente</title>
+    <title>Xhopii - Cadastro Loja</title>
+
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -14,18 +15,19 @@
             <img src="../img/logo.png" alt="Xhopii Logo">
             <span>Xhopii</span>
         </section>
- <a href="../Processamento/Processamento.php?tipo=logout"
+
+        <a href="../Processamento/Processamento.php?tipo=logout"
    class="exit-link">
    Sair
-</a>       
+</a>
     </section>
 
     <nav class="nav-bar">
         <a href="home.php">Home</a>
-        <a href="cad_cliente.php" class="active">Cadastro Cliente</a>
+        <a href="cad_cliente.php">Cadastro Cliente</a>
         <a href="cad_funcionario.php">Cadastro Funcionário</a>
         <a href="cad_produto.php">Cadastro Produto</a>
-        <a href="cad_loja.php">Cadastro Loja</a>
+        <a href="cad_loja.php" class="active">Cadastro Loja</a>
         <a href="cad_cupom.php">Cadastro Cupom</a>
         <a href="ver_clientes.php">Ver Clientes</a>
         <a href="ver_funcionarios.php">Ver Funcionários</a>
@@ -36,31 +38,78 @@
 </header>
 
 <main class="cadastro-main">
+
     <section class="card-cadastro">
-        <h2>Cadastrar Cliente</h2>
 
-        <form method="POST" action="../Processamento/Processamento.php">
-            <input type="hidden" name="tipo" value="cliente">
+        <h2>Cadastrar Loja</h2>
 
-            <input type="text" name="nome" placeholder="Nome completo" required>
-            <input type="text" name="cpf" placeholder="CPF" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="senha" placeholder="Senha" required>
-            <input type="text" name="telefone" placeholder="Telefone" required>
-          <input type="date"name="data_nascimento"class="campo-data"required>
+<form method="POST" action="../Processamento/Processamento.php" enctype="multipart/form-data">
 
-            <button type="submit" class="btn-principal">CADASTRAR</button>
-            <p class="login-link">
-    Já tem cadastro?
-    <a href="login.php">Fazer login</a>
-</p>
+            <input type="hidden" name="tipo" value="loja">
+
+            <input
+                type="text"
+                name="nome"
+                placeholder="Nome da Loja"
+                required>
+
+            <input
+                type="text"
+                name="cnpj"
+                placeholder="CNPJ"
+                required>
+
+            <input
+                type="text"
+                name="categoria"
+                placeholder="Categoria"
+                required>
+
+            <input
+                type="text"
+                name="endereco"
+                placeholder="Endereço"
+                required>
+
+            <input
+                type="text"
+                name="telefone"
+                placeholder="Telefone">
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Email">
+
+            <textarea
+                name="descricao"
+                placeholder="Descrição da Loja"></textarea>
+
+            <label class="label-upload">
+               Logo da Loja
+       </label>
+
+          <input
+    type="file"
+    name="logo_loja"
+    accept="image/*"
+    required>
+
+            <button
+                type="submit"
+                class="btn-principal">
+                CADASTRAR
+            </button>
+
         </form>
-    </section>
-</main>
 
+    </section>
+
+</main>
 
 <footer class="main-footer">
     <section class="footer-grid">
+
         <section>
             <h3>ATENDIMENTO AO CLIENTE</h3>
             <ul>
@@ -129,9 +178,12 @@
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Xhopii" width="80" alt="QR Code">
             <p class="app-text">Disponível na Google Play e App Store</p>
         </section>
+
     </section>
 
-    <p class="copyright">© 2026 Xhopii. Todos os direitos acadêmicos reservados</p>
+    <p class="copyright">
+        © 2026 Xhopii. Todos os direitos acadêmicos reservados
+    </p>
 </footer>
 
 </body>

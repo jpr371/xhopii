@@ -1,31 +1,32 @@
 <?php
-class Cliente {
-    // Atributos privados garantindo o encapsulamento
-    private $nome;
-    private $cpf;
-    private $dataNasc;
-    private $endereco;
-    private $email;
-    private $telefone;
 
-    // Construtor para inicializar o objeto com dados básicos
-    public function __construct($nome, $cpf, $dataNasc, $endereco, $email, $telefone) {
+class Cliente{
+
+    protected $nome;
+    protected $cpf;
+    protected $email;
+    protected $telefone;
+    protected $data_nascimento;
+    protected $senha;
+
+    public function __construct($nome, $cpf, $email, $telefone, $data_nascimento, $senha){
+
         $this->nome = $nome;
         $this->cpf = $cpf;
-        $this->dataNasc = $dataNasc;
-        $this->endereco = $endereco;
         $this->email = $email;
         $this->telefone = $telefone;
+        $this->data_nascimento = $data_nascimento;
+        $this->senha = $senha;
+
     }
 
-    // Método mágico __get para ler atributos privados de forma segura
-    public function __get($atributo) {
-        return $this->$atributo;
-    }
+    public function getNome(){ return $this->nome; }
+    public function getCpf(){ return $this->cpf; }
+    public function getEmail(){ return $this->email; }
+    public function getTelefone(){ return $this->telefone; }
+    public function getDataNascimento(){ return $this->data_nascimento; }
+    public function getSenha(){ return $this->senha; }
 
-    // Método mágico __set para alterar atributos privados de forma segura
-    public function __set($atributo, $valor) {
-        $this->$atributo = $valor;
-    }
 }
+
 ?>

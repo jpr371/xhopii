@@ -1,19 +1,30 @@
 <?php
 
-class Produto {
+class Produto{
 
-    private $nome;
-    private $fabricante;
-    private $descricao;
-    private $valor;
-    private $quantidade;
+    protected $nome;
+    protected $fabricante;
+    protected $descricao;
+    protected $valor;
+    protected $quantidade;
+    protected $foto_produto;
 
-    public function __construct($nome, $fabricante, $descricao, $valor, $quantidade){
+    public function __construct(
+        $nome,
+        $fabricante,
+        $descricao,
+        $valor,
+        $quantidade,
+        $foto_produto
+    ){
+
         $this->nome = $nome;
         $this->fabricante = $fabricante;
         $this->descricao = $descricao;
         $this->valor = $valor;
         $this->quantidade = $quantidade;
+        $this->foto_produto = $foto_produto;
+
     }
 
     public function getNome(){
@@ -35,5 +46,10 @@ class Produto {
     public function getQuantidade(){
         return $this->quantidade;
     }
+
+    public function getFotoProduto(){
+        return $this->foto_produto;
+    }
+
 }
 ?>

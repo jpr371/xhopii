@@ -3,40 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xhopii - Cadastro de Funcionário</title>
+    <title>Xhopii - Cadastro Funcionário</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <section class="conteudo-cadastro">
+
+<header class="main-header">
+    <section class="header-top">
+        <section class="logo-area">
+            <img src="../img/logo.png" alt="Xhopii Logo">
+            <span>Xhopii</span>
+        </section>
+        <a href="../Processamento/Processamento.php?tipo=logout"
+   class="exit-link">
+   Sair
+</a>
+    </section>
+
+    <nav class="nav-bar">
+        <a href="home.php">Home</a>
+        <a href="cad_cliente.php">Cadastro Cliente</a>
+        <a href="cad_funcionario.php" class="active">Cadastro Funcionário</a>
+        <a href="cad_produto.php">Cadastro Produto</a>
+        <a href="cad_loja.php">Cadastro Loja</a>
+        <a href="cad_cupom.php">Cadastro Cupom</a>
+        <a href="ver_clientes.php">Ver Clientes</a>
+        <a href="ver_funcionarios.php">Ver Funcionários</a>
+        <a href="ver_produtos.php">Ver Produtos</a>
+        <a href="ver_lojas.php">Ver Lojas</a>
+        <a href="ver_cupons.php">Ver Cupons</a>
+    </nav>
+</header>
+
+<main class="cadastro-main">
+    <section class="card-cadastro">
         <h2>Cadastrar Funcionário</h2>
 
-        <?php if(isset($_GET['status']) && $_GET['status'] == 'success'): ?>
-            <p style="color: green;">Funcionário cadastrado com sucesso!</p>
-        <?php endif; ?>
+        <form method="POST" action="../Processamento/Processamento.php">
+            <input type="hidden" name="tipo" value="funcionario">
 
-        <form method="POST" action="../processamento/processamento.php">
-            <label>Nome:</label>
-            <input type="text" name="inputNome" required><br><br>
+            <input type="text" name="nome" placeholder="Nome completo" required>
+            <input type="text" name="cpf" placeholder="CPF" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <input type="text" name="cargo" placeholder="Cargo" required>
+            <input type="number" step="0.01" name="salario" placeholder="Salário" required>
+            <input type="text" name="telefone" placeholder="Telefone" required>
+            <input type="email" name="email" placeholder="Email" required>
 
-            <label>CPF:</label>
-            <input type="text" name="inputCpf" required><br><br>
-
-            <label>Data de Nascimento:</label>
-            <input type="date" name="inputDataNasc" required><br><br>
-
-            <label>Cargo:</label>
-            <input type="text" name="inputCargo" required><br><br>
-
-            <label>Salário:</label>
-            <input type="number" step="0.01" name="inputSalario" required><br><br>
-
-            <label>E-mail:</label>
-            <input type="email" name="inputEmail" required><br><br>
-
-            <label>Telefone:</label>
-            <input type="text" name="inputTelefone" required><br><br>
-
-            <input type="submit" name="btnCadFuncionario" value="Cadastrar">
+            <button type="submit" class="btn-principal">CADASTRAR</button>
+            <p class="login-link">
+    Já tem cadastro?
+    <a href="login.php">Fazer login</a>
+</p>
         </form>
     </section>
+</main>
+
+<footer class="main-footer">
+    <section class="footer-grid">
+        <section>
+            <h3>ATENDIMENTO AO CLIENTE</h3>
+            <ul>
+                <li>Central de Ajuda</li>
+                <li>Como Comprar</li>
+                <li>Métodos de Pagamento</li>
+                <li>Garantia Xhopii</li>
+                <li>Devolução e Reembolso</li>
+                <li>Fale Conosco</li>
+                <li>Ouvidoria</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>SOBRE A XHOPII</h3>
+            <ul>
+                <li>Sobre Nós</li>
+                <li>Políticas Xhopii</li>
+                <li>Política de Privacidade</li>
+                <li>Programa de Afiliados da Xhopii</li>
+                <li>Seja um Entregador Xhopii</li>
+                <li>Ofertas Relâmpago</li>
+                <li>Xhopii Blog</li>
+                <li>Imprensa</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>PAGAMENTO</h3>
+            <section class="pagamento-imgs">
+                <img src="../img/visa.png" alt="Visa">
+                <img src="../img/mastercard.png" alt="Mastercard">
+                <img src="../img/pix.png" alt="Pix">
+                <img src="../img/boleto.png" alt="Boleto">
+                <img src="../img/elo.png" alt="Elo">
+                 <img src="../img/hipercard.png" alt="Hipercard">
+            </section>
+        </section>
+ <section class="redes-sociais">
+
+    <a href="#">
+        <img src="../img/instagram.jpg" alt="Instagram">
+    </a>
+
+    <a href="#">
+        <img src="../img/twitter.png" alt="Twitter">
+    </a>
+
+    <a href="#">
+        <img src="../img/facebook.jpg" alt="Facebook">
+    </a>
+
+    <a href="#">
+        <img src="../img/Youtube.png" alt="YouTube">
+    </a>
+
+    <a href="#">
+        <img src="../img/linkedin.jpg" alt="LinkedIn">
+    </a>
+
+</section>
+
+        <section>
+            <h3>ATENDIMENTO AO CLIENTE</h3>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Xhopii" width="80" alt="QR Code">
+            <p class="app-text">Disponível na Google Play e App Store</p>
+        </section>
+    </section>
+
+    <p class="copyright">© 2026 Xhopii. Todos os direitos acadêmicos reservados</p>
+</footer>
+
 </body>
 </html>

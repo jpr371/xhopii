@@ -1,29 +1,35 @@
 <?php
-class Funcionario {
-    private $nome;
-    private $cpf;
-    private $dataNasc;
-    private $cargo;
-    private $salario;
-    private $email;
-    private $telefone;
 
-    public function __construct($nome, $cpf, $dataNasc, $cargo, $salario, $email, $telefone) {
+class Funcionario{
+
+    protected $nome;
+    protected $cpf;
+    protected $cargo;
+    protected $salario;
+    protected $telefone;
+    protected $email;
+    protected $senha;
+
+    public function __construct($nome, $cpf, $cargo, $salario, $telefone, $email, $senha){
+
         $this->nome = $nome;
         $this->cpf = $cpf;
-        $this->dataNasc = $dataNasc;
         $this->cargo = $cargo;
         $this->salario = $salario;
-        $this->email = $email;
         $this->telefone = $telefone;
+        $this->email = $email;
+        $this->senha = $senha;
+
     }
 
-    public function __get($atributo) {
-        return $this->$atributo;
-    }
+    public function getNome(){ return $this->nome; }
+    public function getCpf(){ return $this->cpf; }
+    public function getCargo(){ return $this->cargo; }
+    public function getSalario(){ return $this->salario; }
+    public function getTelefone(){ return $this->telefone; }
+    public function getEmail(){ return $this->email; }
+    public function getSenha(){ return $this->senha; }
 
-    public function __set($atributo, $valor) {
-        $this->$atributo = $valor;
-    }
 }
+
 ?>

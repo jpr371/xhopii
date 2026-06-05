@@ -1,2 +1,0 @@
-# xhopii
-site da shopee
